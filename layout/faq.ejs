@@ -8,7 +8,7 @@
 
     <% for (var group in sortedsubjects) { %>
         
-        <h4 class="faq-subject clear-fix"><%= sortedsubjects[group].title %></h4>
+        <h4 class="faq-subject clear-fix" id="<%= sortedsubjects[group].group %>"><%= sortedsubjects[group].title %></h4>
         
         <% var sortedquestions = site.data.faq_questions.sort(function (a,b) { return a.weight > b.weight; }); %>
 
