@@ -230,6 +230,19 @@ nav i
 	/*display: none;*/
 }
 
+/* FAQs */
+
+.faq-qa + p
+{
+    margin-left: 2em;
+}
+.faq-qa
+{
+    color: blue;
+    font-size: 120%;
+    margin-bottom: -2em;
+}
+
 /* Page Footer */
 
 footer
@@ -237,7 +250,7 @@ footer
 	padding-top: 10px;
 	padding-bottom: 10px;
 	justify-content: space-between;
-  display: flex;
+  	display: flex;
 }
 
 /* Desktop View Overrides */

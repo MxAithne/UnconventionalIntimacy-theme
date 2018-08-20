@@ -1,0 +1,28 @@
+<!-- FAQ Layout -->
+
+<article class="page-width page-centre article-height">
+
+    <%- page.content %>
+    
+    <% var sortedsubjects = site.data.faq_subjects.sort(function (a,b) { return a.weight > b.weight; }); %>
+
+    <% for (var group in sortedsubjects) { %>
+        
+        <h4 class="faq-subject clear-fix"><%= sortedsubjects[group].title %></h4>
+        
+        <% var sortedquestions = site.data.faq_questions.sort(function (a,b) { return a.weight > b.weight; }); %>
+
+        <% for (var question in sortedquestions) { %>
+
+            <% if (sortedquestions[question].group == sortedsubjects[group].group) { %>
+        
+                <p class="faq-qa">Q:</p> <%- markdown(sortedquestions[question].question) %>
+                <p class="faq-qa">A:</p> <%- markdown(sortedquestions[question].answer) %>
+        
+            <% } %>  
+        
+        <% } %>        
+
+    <% } %>
+
+</article>
