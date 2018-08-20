@@ -15,7 +15,7 @@
 
 <main class="page-width page-centre post-list">
 	<ul>
-		<% page.posts.each(function(item){ %>
+		<% page.posts.forEach(function(item){ %>
 			<%- partial('_partial/content-list', {item: item}) %>
 		<% }); %>
 	</ul>

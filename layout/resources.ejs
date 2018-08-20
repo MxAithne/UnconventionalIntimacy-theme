@@ -1,9 +1,25 @@
 <!-- Resources Content -->
 <!-- This is used to generate a page with multipul categories and a header area. -->
 
-<article class="page-width page-centre article-height">
+	
+<main class="page-width page-centre post-list">
 
-    <%- page.content %>
-    <%- page.listcats %>
+	<%- page.content %>
 
-</article>
+	<%  page.listcats.forEach(function(item){ %>
+
+		<h3 class="page-width page-centre"><%- item ? titlecase(item.replace("-", " ")) : ''%></h3>
+		
+		<ul>
+
+			<% site.categories.findOne({name: item}).posts.sort('title', 1).each(function(post) { %>
+
+				<li><a href="/<%- post.path %>"><%= post.title %></a></li>
+			
+			<% }) %>
+
+		</ul>
+		 
+	<% }); %>	
+
+</main>
